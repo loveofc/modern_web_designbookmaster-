@@ -2,6 +2,7 @@
 
 /* 그리드 가이드 */
 
+/*속성으로 class가 있으면서 box로 시작하는 값을 가진 요소 선택, div인데 class속성을 가지지 않는 div 선택*/
 [class^="box"],
 div:not([class])
 	{
@@ -19,8 +20,11 @@ div:not([class])
 	font-size: 40px;
 	}
 
+/*body 바로 뒤에 자식 요소가 div인데 class속성이 없으면 선택*/
 body > div:not([class]) {min-height: 200px}
 
+/class속성을 가지면서 값이 box로시작하는 요서의 바로 뒤의 자식을 선택하는데 조건은 class속성을 가지며 box로시작하는 값을 가진 녀석은
+안됨*/
 [class^="box"] > *:not([class^="box"]) {
 	min-height: 0;
 	line-height: 1.5;
@@ -31,7 +35,10 @@ body > div:not([class]) {min-height: 200px}
 	text-align: left;
 	}
 
-
+/*div 바로 뒤의 자식이 div이고 두가지 조건을 만족하면
+ 선택한다
+1. class속성이 있을떄는 박스로 시작하고
+2. div인데 클래스가 없는 녀석을 선택해라*/
 [class^="box"] > [class^="box"],
 div:not([class]) > div:not([class])
 	{
