@@ -47,13 +47,13 @@ div:not([class]) > div:not([class])
 	background-color: #ffe;
 	}
 
-
+/*class속성이 있고 값이 box로 시작하는 녀석인데 바로 뒤에 있는 자식선택하고 또 그 자식의 바로 뒤에있는 자식을 선택해라*/
 [class^="box"] > [class^="box"] > [class^="box"]	{
 	border-color: #aaf;
 	color: #aaf;
 	background-color: #eef;
 	}
-
+/*class속성이 있고 값이 box로 시작하는 녀석인데 자식, 손자에 증손자를 선택하는데, 속성이 class가지고있으면 값이 box로 시작하는 녀석이다./
 [class^="box"] > [class^="box"] > [class^="box"] > [class^="box"]	{
 	border-color: #afa;
 	color: #afa;
